@@ -19,14 +19,14 @@ void heapify(int h[],int n)
     			if(j<n1)
      				if(h[j]<h[j+1])
       					j=j+1;
-    				if(v>=h[j])
-     					heap=1;
-    				else
-    				{
-    					h[k]=h[j];
-    					k=j;
-    				}
-    				h[k]=v;
+    			if(v>=h[j])
+     				heap=1;
+    			else
+    			{
+    				h[k]=h[j];
+    				k=j;
+    			}
+    			h[k]=v;
   		}
 	}
 }
@@ -39,12 +39,12 @@ void main()
 
 	printf("enter value of n\n");
 	scanf("%d",&n);
-	printf("enter array elements\n");
+	
 	for(i=1;i<=n;i++)
 	{
-		//h[i]=rand();
+		h[i]=rand();
 
-		scanf("%d",&h[i]);
+		
 	}
 	printf("elements\n");
 	for(i=1;i<=n;i++)
