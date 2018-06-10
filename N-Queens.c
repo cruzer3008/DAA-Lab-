@@ -1,19 +1,23 @@
 
 #include<stdio.h>
-
 #include<math.h>
-int place(int pos);
-void printsol(int k);
-void queens(int n);
 
 int count=0,n;
 int a[100];
 
-void main()
+int place(int pos)
 {
-	printf("Enter the number of queens\n");
-	scanf("%d",&n);
-	queens(n);
+	int i;
+
+	for(i=1;i<pos;i++)
+	{
+		if((a[i]==a[pos]) || (abs(a[i]-a[pos])==abs(i-pos)))
+		{
+			return 0;
+		}
+	}
+	
+	return 1;
 }
 
 
@@ -47,20 +51,6 @@ void queens(int n)
 	}
 }
 
-int place(int pos)
-{
-	int i;
-
-	for(i=1;i<pos;i++)
-	{
-		if((a[i]==a[pos]) || (abs(a[i]-a[pos])==abs(i-pos)))
-		{
-			return 0;
-		}
-	}
-	
-	return 1;
-}
 
 void printsol(int k)
 {
@@ -84,4 +74,11 @@ void printsol(int k)
 	
 		printf("\n");
 	}
+}
+
+void main()
+{
+	printf("Enter the number of queens\n");
+	scanf("%d",&n);
+	queens(n);
 }
